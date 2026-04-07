@@ -144,8 +144,10 @@ Manfaat:
 ---
 
 ## 📸 Halaman Layout Utama
+![foto](https://github.com/dirarohmaeni/Lab7Web./blob/e355dcdcebec95046142d5d53b7b3b382be30e65/LAB11_CI/PRAKTIKUM3/utama.png)
 
 ## 📸 Halaman Sidebar Artikel Baru
+![foto](https://github.com/dirarohmaeni/Lab7Web./blob/e355dcdcebec95046142d5d53b7b3b382be30e65/LAB11_CI/PRAKTIKUM2/Screenshot%202026-04-03%20195035.png)
 
 ---
 
@@ -200,12 +202,12 @@ session()->destroy();
 
 ---
 
-📸 Screenshot:
+## 📸 Database User
+![foto](https://github.com/dirarohmaeni/Lab7Web./blob/e355dcdcebec95046142d5d53b7b3b382be30e65/LAB11_CI/PRAKTIKUM5/database_user.png)
 
-* Halaman login
-* Login berhasil
-* Database user
-* Filter redirect
+## 📸 Halaman Login
+
+## 📸 Filter Redirect
 
 ---
 
