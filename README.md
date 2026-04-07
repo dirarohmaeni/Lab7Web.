@@ -2,9 +2,9 @@
 
 ## 👨‍🎓 Identitas Mahasiswa
 
-*Nama  : Dira Rohmaeni*
-*NIM   : 312410465*
-*Kelas : I241E*
+* Nama  : Dira Rohmaeni
+* NIM   : 312410465
+* Kelas : I241E
 
 ---
 
