@@ -227,7 +227,7 @@ database.default.DBDriver = MySQLi
 3. Jalankan:
 
 ```bash
-php spark serve
+php.exe spark serve
 ```
 
 4. Buka:
