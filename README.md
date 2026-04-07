@@ -68,7 +68,8 @@ Memahami dasar CodeIgniter 4 dan routing.
   * `/contact`
 
 ## 📸 Halaman Welcome
-![Welcome][]
+
+![foto][]
 
 ---
 
