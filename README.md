@@ -206,8 +206,10 @@ session()->destroy();
 ![foto](https://github.com/dirarohmaeni/Lab7Web./blob/e355dcdcebec95046142d5d53b7b3b382be30e65/LAB11_CI/PRAKTIKUM5/database_user.png)
 
 ## 📸 Halaman Login
+![foto](https://github.com/dirarohmaeni/Lab7Web./blob/e355dcdcebec95046142d5d53b7b3b382be30e65/LAB11_CI/PRAKTIKUM5/login.png)
 
 ## 📸 Filter Redirect
+![foto](https://github.com/dirarohmaeni/Lab7Web./blob/e355dcdcebec95046142d5d53b7b3b382be30e65/LAB11_CI/PRAKTIKUM5/filter_redirect.png)
 
 ---
 
