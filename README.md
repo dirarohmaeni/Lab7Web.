@@ -1,38 +1,75 @@
-# 📚 Praktikum Pemrograman Web 2 (CodeIgniter 4)
+# 📚 Praktikum Pemrograman Web 2 — CodeIgniter 4
 
-## 👨‍🎓 Identitas
+## 👨‍🎓 Identitas Mahasiswa
 
-* Nama: Dira Rohmaeni
-* NIM: 312410465
-* Kelas: I241E
+* Nama  : Dira Rohmaeni
+* NIM   : 312410465
+* Kelas : I241E
 
 ---
 
-## 📌 Deskripsi
+# 📌 Deskripsi Project
 
-Repository ini berisi hasil praktikum **Pemrograman Web 2** menggunakan framework **CodeIgniter 4** yang meliputi:
+Project ini merupakan hasil praktikum mata kuliah **Pemrograman Web 2** menggunakan framework **CodeIgniter 4**.
+
+Aplikasi yang dibuat adalah **Portal Berita sederhana** yang memiliki fitur:
 
 * CRUD Artikel
-* View Layout & View Cell
+* Layout Template
+* Sidebar dinamis (View Cell)
 * Sistem Login (Authentication)
-* Filter (Proteksi Halaman Admin)
+* Proteksi halaman admin (Filter)
 
 ---
 
-# 🧪 Praktikum 1 — Pengenalan CodeIgniter 4
+# ⚙️ Teknologi yang Digunakan
+
+* PHP 8
+* CodeIgniter 4
+* MySQL (XAMPP)
+* HTML, CSS
+
+---
+
+# 📁 Struktur Project
+
+```bash
+app/
+ ├── Controllers/
+ │   ├── Artikel.php
+ │   └── User.php
+ ├── Models/
+ │   ├── ArtikelModel.php
+ │   └── UserModel.php
+ ├── Views/
+ │   ├── artikel/
+ │   ├── user/
+ │   ├── layout/
+ │   └── components/
+ ├── Filters/
+ │   └── Auth.php
+```
+
+---
+
+# 🧪 Praktikum 1 — Instalasi & Routing
 
 ## 🎯 Tujuan
 
-Memahami struktur dasar framework CodeIgniter 4 dan cara menjalankan aplikasi.
+Memahami dasar CodeIgniter 4 dan routing.
 
-## ✅ Hasil
+## 🧠 Hasil
 
 * Menjalankan server dengan `php spark serve`
-* Menampilkan halaman awal CodeIgniter
+* Mengakses route:
+
+  * `/`
+  * `/about`
+  * `/contact`
 
 📸 Screenshot:
 
-* Halaman welcome CodeIgniter
+* Halaman awal CodeIgniter
 
 ---
 
@@ -40,24 +77,24 @@ Memahami struktur dasar framework CodeIgniter 4 dan cara menjalankan aplikasi.
 
 ## 🎯 Tujuan
 
-Membuat fitur CRUD (Create, Read, Update, Delete)
+Membuat fitur CRUD menggunakan MVC.
 
 ## ✅ Fitur
 
-* Menampilkan daftar artikel
+* Menampilkan artikel
 * Menambahkan artikel
 * Mengedit artikel
 * Menghapus artikel
 
-## 🛠️ Komponen
+## 🧠 Penjelasan
 
-* Model: `ArtikelModel.php`
-* Controller: `Artikel.php`
-* View: `artikel/index.php`, `form_add.php`, `form_edit.php`
+* Model digunakan untuk mengakses database
+* Controller sebagai penghubung logic
+* View untuk tampilan
 
 📸 Screenshot:
 
-* Halaman daftar artikel
+* List artikel
 * Tambah artikel
 * Edit artikel
 * Hapus artikel
@@ -68,18 +105,39 @@ Membuat fitur CRUD (Create, Read, Update, Delete)
 
 ## 🎯 Tujuan
 
-Menggunakan template layout dan komponen dinamis
+Menggunakan template dan komponen reusable.
 
-## ✅ Hasil
+## ✅ Implementasi
 
-* Menggunakan layout utama (`layout/main.php`)
-* Menggunakan `extend()` dan `section()`
-* Menampilkan sidebar dinamis (Artikel Terbaru)
+### 🔹 View Layout
 
-## 🧠 Konsep
+Menggunakan:
 
-* **View Layout**: Template utama untuk tampilan
-* **View Cell**: Komponen reusable untuk menampilkan data dinamis
+```php
+<?= $this->extend('layout/main') ?>
+```
+
+Manfaat:
+
+* Tampilan lebih rapi
+* Tidak perlu copy-paste header/footer
+
+---
+
+### 🔹 View Cell
+
+Digunakan untuk sidebar artikel terbaru.
+
+```php
+<?= view_cell('App\\Cells\\ArtikelTerbaru::render') ?>
+```
+
+Manfaat:
+
+* Komponen dinamis
+* Bisa digunakan ulang
+
+---
 
 📸 Screenshot:
 
@@ -92,50 +150,67 @@ Menggunakan template layout dan komponen dinamis
 
 ## 🎯 Tujuan
 
-Membuat sistem login dan proteksi halaman admin
+Membuat sistem login dan keamanan halaman.
 
-## ✅ Fitur
+---
 
-* Login user
-* Logout
-* Session login
-* Proteksi halaman admin menggunakan filter
+## 🔐 Sistem Login
 
-## 🛠️ Komponen
+### Alur:
 
-* Model: `UserModel.php`
-* Controller: `User.php`
-* View: `user/login.php`
-* Filter: `Auth.php`
+1. User memasukkan email & password
+2. Sistem memverifikasi data di database
+3. Password dicek menggunakan `password_verify`
+4. Jika valid → login berhasil
 
-## 🔐 Alur Login
+---
 
-1. User menginput email & password
-2. Sistem mencocokkan data di database
-3. Jika valid → login berhasil
-4. Redirect ke halaman admin
+## 🔐 Session
 
-## 🧠 Auth Filter
+Digunakan untuk menyimpan status login:
 
-* Digunakan untuk membatasi akses halaman admin
-* Jika belum login → redirect ke login
+```php
+session()->set([
+ 'logged_in' => true
+]);
+```
+
+---
+
+## 🔐 Auth Filter
+
+Digunakan untuk membatasi akses halaman admin.
+
+```php
+if (!session()->get('logged_in')) {
+    return redirect()->to('/user/login');
+}
+```
+
+---
+
+## 🔐 Logout
+
+```php
+session()->destroy();
+```
+
+---
 
 📸 Screenshot:
 
 * Halaman login
 * Login berhasil
 * Database user
-* Filter redirect ke login
+* Filter redirect
 
 ---
 
-# ⚙️ Konfigurasi
-
-## 🔗 Database
+# ⚙️ Konfigurasi Database
 
 Edit file `.env`:
 
-```
+```ini
 database.default.hostname = localhost
 database.default.database = lab_ci4
 database.default.username = root
@@ -145,29 +220,19 @@ database.default.DBDriver = MySQLi
 
 ---
 
-# 🚀 Cara Menjalankan
+# 🚀 Cara Menjalankan Project
 
-1. Clone repository:
+1. Jalankan XAMPP (Apache & MySQL)
+2. Masuk folder project
+3. Jalankan:
 
-```
-git clone https://github.com/username/repository.git
-```
-
-2. Masuk ke folder project:
-
-```
-cd project-folder
-```
-
-3. Jalankan server:
-
-```
+```bash
 php spark serve
 ```
 
-4. Buka browser:
+4. Buka:
 
-```
+```bash
 http://localhost:8080
 ```
 
@@ -175,16 +240,17 @@ http://localhost:8080
 
 # 🎯 Kesimpulan
 
-Dengan menggunakan CodeIgniter 4:
+Dari praktikum ini dapat disimpulkan bahwa:
 
-* Pengembangan aplikasi menjadi lebih terstruktur
-* Kode lebih rapi dan reusable
-* Memiliki sistem keamanan (login & filter)
+* CodeIgniter 4 mempermudah pengembangan web
+* Konsep MVC membuat kode lebih terstruktur
+* View Layout dan View Cell meningkatkan efisiensi
+* Sistem login dan filter meningkatkan keamanan aplikasi
 
 ---
 
 # 🙌 Penutup
 
-Demikian hasil praktikum ini dibuat sebagai bentuk pemahaman terhadap materi Pemrograman Web 2.
+Project ini dibuat sebagai bentuk pemahaman terhadap materi Pemrograman Web 2.
 
 Terima kasih.
