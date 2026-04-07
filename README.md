@@ -91,12 +91,17 @@ Membuat fitur CRUD menggunakan MVC.
 * Controller sebagai penghubung logic
 * View untuk tampilan
 
-📸 Screenshot:
+## 📸 Halaman List Artikel
+![foto](https://github.com/dirarohmaeni/Lab7Web./blob/e355dcdcebec95046142d5d53b7b3b382be30e65/LAB11_CI/PRAKTIKUM2/list.png)
 
-* List artikel
-* Tambah artikel
-* Edit artikel
-* Hapus artikel
+## 📸 Halaman Tambah Artikel
+![foto](https://github.com/dirarohmaeni/Lab7Web./blob/e355dcdcebec95046142d5d53b7b3b382be30e65/LAB11_CI/PRAKTIKUM2/tambah.png)
+
+## 📸 Halaman Edit Artikel
+![foto](https://github.com/dirarohmaeni/Lab7Web./blob/e355dcdcebec95046142d5d53b7b3b382be30e65/LAB11_CI/PRAKTIKUM2/edit.png)
+
+## 📸 Halaman Hapus Artikel
+![foto](https://github.com/dirarohmaeni/Lab7Web./blob/e355dcdcebec95046142d5d53b7b3b382be30e65/LAB11_CI/PRAKTIKUM2/hapus.png)
 
 ---
 
@@ -138,10 +143,9 @@ Manfaat:
 
 ---
 
-📸 Screenshot:
+## 📸 Halaman Layout Utama
 
-* Layout utama
-* Sidebar artikel terbaru
+## 📸 Halaman Sidebar Artikel Baru
 
 ---
 
