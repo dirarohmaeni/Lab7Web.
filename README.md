@@ -68,7 +68,7 @@ Memahami dasar CodeIgniter 4 dan routing.
   * `/contact`
 
 ## 📸 Halaman Welcome
-
+![FOTO](https://github.com/dirarohmaeni/Lab7Web./blob/e355dcdcebec95046142d5d53b7b3b382be30e65/LAB11_CI/PRAKTIKUM1/Screenshot%202026-04-02%20101715.png)
 
 ---
 
